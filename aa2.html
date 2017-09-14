@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>青春补水game</title>
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		html,body{
+			width: 100%;
+			height: 100%;
+		}
+		.wrap{
+			width: 100%;
+			height: 100%;
+			max-width: 640px;
+			background-image: url("img/main/bg.jpg");
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			/* position: relative; */
+			margin:auto;
+		}
+		.one{
+			width: 100%;
+			height: 100%;
+			max-width: 640px;
+			position: relative;
+			/* display: none; */
+		}
+		/* 第一个页面 */
+		.one img{
+			position: absolute;
+		}
+		/* 导航文字 */
+		.one img:nth-child(1){
+			width: 45.15%;
+			top:2%;
+			left:25%;
+		}
+		/* 人物 */
+		.wrap .one img:nth-child(2){
+			top:15%;
+			left:23%;
+			z-index: 2;
+		}
+		/* 人物身体 */
+		.wrap .one img:nth-child(3){
+			top:36%;
+			left:1%;
+			z-index: 0;
+		}
+		/* 圈圈 */
+		.one img:nth-child(4){
+			width: 11.56%;
+			top:20%;
+			left:65%;
+			z-index: 3;
+		}
+		.one img:nth-child(5){
+			width: 11.56%;
+			top:23%;
+			left:25%;
+			z-index: 3;
+		}
+		/* 瓶子 */
+		.one img:nth-child(6){
+			width: 29.43%;
+			top:53%;
+			left:5%;
+			z-index: 3;
+		}
+		/* 手点击提示 */
+		.one img:nth-child(7){
+			width: 8.43%;
+			top:39%;
+			left:58%;
+			opacity: 0.5;
+			z-index: 3;
+		}
+		/* 音乐 */
+		.one img:nth-child(8){
+			width: 0%;
+			top:0%;
+			right:10%;
+			z-index: -1;
+		}
+		/* 冒泡文字 */
+		.one img:nth-child(9){
+			width: 53%;
+			top:15%;
+			left:0%;
+			z-index: 3;
+			display: none;
+		}
+		/* 感叹号 */
+		.one img:nth-child(10){
+			width: 15.9%;
+			top:40%;
+			left:18%;
+			display: none;
+			z-index: 3;
+		}
+		.one img:nth-child(11){
+			width: 15.9%;
+			top:18%;
+			right:16%;
+			display: none;
+			z-index: 3;
+		}
+		/*  12两边小点 */
+		.one img:nth-child(12){
+			width: 30%;
+			top:36%;
+			right:34%;
+			display: none;
+			z-index: 3;
+		}
+		/* mua */
+		.one img:nth-child(13){
+			width: 30%;
+			top:43%;
+			left:10%;
+			display: none;
+			z-index: 3;
+		}
+		/* 黄冠 */
+		.one img:nth-child(14){
+			width: 15.5%;
+			top:19%;
+			left:60%;
+			z-index: 3;
+			display: none;
+		}
+		/* 心 */
+		.one img:nth-child(15){
+			width: 15.5%;
+			top:42%;
+			left:25%;
+			z-index: 3;
+			display: none;
+		}
+		/* 时间框 */
+		.one img:nth-child(16){
+			width: 25%;
+			top:67%;
+			left:42%;
+			z-index: 3;
+			/* display: none; */
+		}
+		/* 时间 */
+		.one #time{
+			position: absolute;
+			font-size:25px;
+			top:67.5%;
+			left:46%;
+			z-index: 3;
+		}
+		/* 第二部分 */
+		.two{
+			width: 100%;
+			height: 100%;
+			max-width: 640px;
+			position: absolute;
+			display: none;
+		}
+		.two img{
+			position: absolute;
+		}
+		/* 头部文字+文字 */
+		.two img:nth-child(1){
+			width: 93%;
+			top:3%;
+			left:2%;
+			/* display: none; */
+		}
+		.two img:nth-child(2){
+			width: 53%;
+			top:7%;
+			left:20%;
+			/* display: none; */
+		}
+		/* 得分 */
+		.two img:nth-child(3){
+			width: 23.625%;
+			top:18%;
+			left:26%;
+			/* display: none; */
+		}
+		.two img:nth-child(4){
+			width:23.625%;
+			top:18%;
+			left:48%;
+			/* display: none; */
+		}
+		/* 中间文字 */
+		.two img:nth-child(5){
+			width: 67.625%;
+			top:40%;
+			left:20%;
+			/* display: none; */
+		}
+		.two img:nth-child(6){
+			width:63.625%;
+			top:45%;
+			left:21%;
+			/* display: none; */
+		}
+		/* 瓶子 */
+		.two img:nth-child(7){
+			width:15.625%;
+			top:55%;
+			left:40%;
+			/* display: none; */
+		}
+		/* 补水完毕 */
+		.two img:nth-child(8){
+			width:38.625%;
+			top:80%;
+			left:28%;
+			/* display: none; */
+		}
+		/* 第三部分 */
+		.three{
+			width: 100%;
+			height: 100%;
+			max-width: 640px;
+			position: absolute;
+			display: none;
+		}
+		.three img{
+			position: absolute;
+		}
+		/* 头部文字 */
+		.three img:nth-child(1){
+			width: 78.125%;
+			top:3%;
+			left:15%;
+		}
+		/* 中间文字 */
+		.three img:nth-child(2){
+			width: 29.437%;
+			top:25%;
+			left:5%;
+		}
+		.three img:nth-child(3){
+			width: 29.437%;
+			top:25%;
+			left:36%;
+		}
+		.three img:nth-child(4){
+			width: 29.437%;
+			top:25%;
+			left:67%;
+		}
+		/* 输入框 */
+		.three img:nth-child(5){
+			width: 72.437%;
+			top:47%;
+			left:15%;
+		}
+		/* 提交 */
+		.three img:nth-child(6){
+			width: 30.437%;
+			top:60%;
+			left:35%;
+		}
+		/* 规则 */
+		.three img:nth-child(7){
+			width: 22.437%;
+			top:69%;
+			left:38%;
+		}
+		/* 高能 */
+		.three img:nth-child(8){
+			width: 80.437%;
+			top:75%;
+			left:10%;
+		}
+		/* 文字输入框 */
+		input{
+			width: 36%;
+			height: 4%;
+			position: absolute;
+			left:45%;
+			top:49%;
+			border: none;
+			outline: none;
+			font-size: 20px;
+			color:skyblue;
+		}
+		/* 第四部分 */
+		.forth{
+			width: 100%;
+			height: 100%;
+			max-width: 640px;
+			position: absolute;
+			background-image: url("img/game/fajiangxize.png");
+			background-repeat: no-repeat;
+			background-size: 80% 80%;
+			background-position: 40px 25%;
+			display: none;
+		}
+		a{
+			position: absolute;
+			width: 9%;
+			height: 6%;
+			top:9%;
+			right:16%;
+			display: inline-block;
+			/* border: 1px solid red; */
+		}
+		/* 最后音乐固定 */
+		.music{
+			position: fixed;
+			bottom:5%;
+			right:13%;
+			width: 10%;
+			height: 6%;
+			background-image: url("img/game/music_01.png");
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			z-index: 5;
+		}
+		/* 预加载 */
+		.one #mask{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top:0;
+		left:0;
+		background-image: url("img/loading.jpg");
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		z-index: 100;
+	}
+	#ig{
+		width: 50.38%;
+		position: absolute;
+		top:35%;
+		left:27%;
+	}
+	p{
+		position: absolute;
+		font-size: 20px;
+		top:45%;
+		left:45%;
+		color:blue;
+	}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+	 <div class="one">
+		<!-- 1导航文字 -->
+		<img src="img/game/bs_logo1.png">
+		<!-- 2人物 -->
+		<img src="img/game/peo4_head.png">
+		<!-- 3人身体 -->
+		<img src="img/game/peo4_body.png">
+		<!-- 4'5圈圈 -->
+		<img src="img/game/biao01.png">
+		<img src="img/game/biao02.png">
+		<!-- 6瓶子 -->
+		<img src="img/game/product.png">
+		<!-- 7手指提示点击 -->
+		<img class="animated flash infinite" src="img/game/hand.png" style="animation-duration: 2s;opacity: 0.2;">
+		<!-- 8音乐 -->
+		<img src="img/game/music_01.png">
+		<!-- 9冒泡文字 -->
+		<img src="img/game/tip1_1.png">
+		<!-- 10'11感叹号 -->
+		<img src="img/game/tip1_2.png">
+		<img src="img/game/tip1_3.png">
+		<!-- 12两边小点 -->
+		<img src="img/game/tip2_3.png">
+		<!-- 13mua -->
+		<img src="img/game/tip2_2.png">
+		<!-- 14皇冠 -->
+		<img src="img/game/tip3_3.png">
+		<!-- 15心 -->
+		<img src="img/game/tip3_2.png">
+		<!-- 16时间框 -->
+		<img src="img/game/time_bg.png">
+		<!-- 17时间 -->
+		<span id="time">20"00</span>
+		<!-- 预加载 -->
+		<span id="mask">
+			<img id="ig" src="img/load_font.png">
+			<p id="p">0%</p>
+		</span>
+	 </div>
+	 <!-- 第二个页面 -->
+	 <div class="two">
+	 <!-- 头部框+文字 -->
+	 	<img src="img/game/result.png">
+	 	<img src="img/game/rt_31.png">
+	 	<!-- 得分 -->
+	 	<img id="scor" src="img/game/0.png">
+	 	<img id="scor1" src="img/game/0.png">
+	 	<!-- 中间文字 -->
+	 	<img src="img/game/rt_21.png">
+	 	<img src="img/game/rt_22.png" alt="">
+	 	<!-- 瓶子 -->
+	 	<img src="img/game/r_2.png">
+	 	<!-- 补完，抽奖 -->
+	 	<img id="wrad" src="img/game/choujiang.png">
+	 </div>
+	 <!-- 第三部分 -->
+	 <div class="three">
+	 <!-- 头部文字 -->
+	 	<img src="img/game/text_01.png">
+	 	<!-- 中间图 -->
+	 	<img src="img/game/pro_01.png">
+	 	<img src="img/game/pro_02.png" alt="">
+	 	<img src="img/game/pro_03.png">
+	 	<!-- 输入框 -->
+	 	<img src="img/game/photo.png">
+	 	<!-- 提交 -->
+	 	<img style="cursor: pointer;" src="img/game/tijiao.png">
+	 	<!-- 规则 -->
+	 	<img id="rule" src="img/game/xize.png">
+	 	<!-- 高能 -->
+	 	<img src="img/game/yujing.png">
+	 	<!-- 文字输入框 -->
+	 	<input type="text">
+	 </div>
+	 <!-- 第四部分 -->
+	 <div class="forth">
+	 	<a href="###"></a>
+	 </div>
+	 <div id="music" class="music"></div>
+	 <audio id="audio" src="bg_music.mp3"></audio>
+	</div>
+</body>
+<script type="text/javascript">
+	var index=sessionStorage.index;
+	var Img=document.querySelectorAll(".wrap .one img");
+	var music=document.querySelector("#music");
+	var audio=document.querySelector("#audio");
+	var span=document.querySelectorAll("span");
+	var one=document.querySelector(".one");
+	var two=document.querySelector(".two");
+	var three=document.querySelector(".three");
+	var forth=document.querySelector(".forth");
+	var scor=document.querySelector("#scor");
+	var scor1=document.querySelector("#scor1");
+	var wrad=document.querySelector("#wrad");
+	var rule=document.querySelector("#rule");
+	var a=document.querySelector("a");
+	var mask=document.querySelector("#mask");
+	var loading=document.querySelector("#p");
+	var fen=0;
+	var timer=null;
+	var t=20;
+	var arr=["img/game/bs_logo1.png","img/game/peo4_head.png","img/game/peo4_body.png","img/game/biao01.png","img/game/biao02.png","img/game/product.png","img/game/hand.png","img/game/music_01.png","img/game/tip1_1.png","img/game/tip1_2.png","img/game/tip1_3.png","img/game/tip2_3.png","img/game/tip2_2.png","img/game/tip3_3.png","img/game/tip3_2.png","img/game/time_bg.png","img/game/result.png","img/game/rt_31.png","img/game/0.png","img/game/0.png","img/game/rt_21.png","img/game/rt_22.png","img/game/r_2.png","img/game/choujiang.png","img/game/text_01.png","img/game/pro_01.png","img/game/pro_02.png","img/game/pro_03.png","img/game/photo.png","img/game/tijiao.png","img/game/xize.png","img/game/yujing.png"];
+	var array=[];
+
+	// 预加载
+	function loFn(arrly,Fn){
+		var n=0;
+		for(var i=0;i<arrly.length;i++){
+			var img=new Image();
+			img.onload=function(){
+				n++;
+				array.push(arrly[n]);
+				loading.innerHTML=parseInt(n/arrly.length*100)+"%";
+				if(n===arrly.length){
+					Fn();
+				}
+			};
+			img.src=arrly[i];
+		}
+	}
+	loFn(arr,function(){
+		mask.style.display="none";
+	})
+
+	// 网页转换
+	audio.play();
+	Img[1].src="img/game/peo"+index+"_head.png";
+	Img[2].src="img/game/peo"+index+"_body.png";
+	// 点击开始
+	Img[6].onclick=function(){
+		fen+=1;
+		Img[6].style.display="none";
+		setTimeout(function(){
+			Img[1].className="animated shake";
+		},20)
+		Img[1].className="";
+		time();
+	}
+	Img[1].onclick=function(){
+		fen+=1;
+		Img[6].style.display="none";
+		setTimeout(function(){
+			Img[1].className="animated shake";
+		},20)
+		Img[1].className="";
+		time();
+	}
+	// 倒计时
+	var bool=false;
+	function time(){
+		if(bool){return}
+			bool=true;
+		tFn();
+		Img[5].src="img/game/product.gif";
+		timer=setInterval(function(){
+			t-=0.1;
+			if(t<=15){
+				Img[3].style.display ="none";
+				Img[4].style.display ="none";
+				Img[9].style.display ="block";
+				Img[10].style.display ="block";
+				Img[8].style.display ="block";
+			} if(t<=10){
+				Img[9].style.display ="none";
+				Img[10].style.display ="none";
+				Img[8].src="img/game/tip2_1.png";
+				Img[11].style.display ="block";
+				Img[12].style.display ="block";
+			} if(t<=5){
+				Img[11].style.display ="none";
+				Img[12].style.display ="none";
+				Img[8].src="img/game/tip3_1.png";
+				Img[13].style.display ="block";
+				Img[14].style.display ="block";
+			} if(t<=0){
+				clearInterval(timer);
+				clearInterval(timer1);
+				t=0;
+				ss=0;
+				span[0].innerHTML=t.toFixed(0)+'"'+ss.toFixed(0);
+				one.style.display ="none";
+				// 第二部分出来
+				two.style.display="block";
+				ttFn();
+			}
+			span[0].innerHTML=t.toFixed(0)+'"'+ss.toFixed(0);
+		},60)
+	}
+	// 秒
+	var ss=99;
+	var timer1=null;
+	function tFn(){
+		timer1=setInterval(function(){
+			ss-=3;
+			if(ss<=0){
+				ss=99;
+			}
+			// span[2].innerHTML=ss.toFixed(0);
+		},60)
+	}
+	// 音乐
+	var bol=false;
+	music.onclick=function(){
+		if(bol){
+			music.style.backgroundImage="url(img/game/music_01.png";
+			audio.play();
+		}else{
+			music.style.backgroundImage="url(img/game/music_02.png";
+				audio.pause();
+		}
+		bol=!bol;
+	}
+	// 第二部分 
+	function ttFn(){
+		var i=0;
+		var j=0;
+		i=parseInt(fen/10);
+		j=fen%10;
+		scor.src="img/game/"+i+".png";
+		scor1.src="img/game/"+j+".png";
+	}
+	wrad.onclick=function(){
+		two.style.display="none";
+		three.style.display="block";
+	}
+	rule.onclick=function(){
+		forth.style.display="block";
+		three.style.display = "none";
+	}
+	a.onclick=function(){
+		forth.style.display="none";
+		three.style.display = "block";
+	}
+</script>
+</html>

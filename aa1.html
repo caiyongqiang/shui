@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <!-- Demo styles -->
+    <style>
+    html, body {
+        position: relative;
+        height: 100%;
+    }
+    body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        max-width: 640px;
+        position:relative;
+        background-image: url("img/main/bg.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    .swiper-button-prev{
+       left:10%;
+    }
+    .swiper-button-next{
+        right:10%;
+    }
+    /* 添加样式 */
+    .swiper-slide img{position: absolute;}
+    /* 导航字体 */
+    .swiper-slide img:nth-child(1){
+      width: 46.4%;
+      top:2%;
+      right:3%;
+    }
+    /* 人物 */
+    .swiper-slide img:nth-child(2){
+      width: 85.93%;
+      top:15%;
+      right:8%;
+    }
+    /* 人物背景 */
+    .swiper-slide img:nth-child(3){
+      width: 85.375%;
+      top:15%;
+      left:8%;
+    }
+    /* 水瓶 */
+    .swiper-slide img:nth-child(4){
+      width: 85.375%;
+      top:16%;
+      left:8%;
+      z-index: 2;
+    }
+    /* 文字 */
+    .swiper-slide img:nth-child(5){
+      width: 85.375%;
+      top:17%;
+      left:8%;
+    }
+    /* 为青春补水 */
+    .swiper-slide img:nth-child(6){
+      width: 28.84%;
+      top:85%;
+      left:33%;
+    }
+    /* 预加载样式 */
+    #mask{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("img/loading.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: 100;
+    display: none;
+  }
+  #ig{
+    width: 50.38%;
+    position: absolute;
+    top:35%;
+    left:27%;
+  }
+  p{
+    position: absolute;
+    font-size: 20px;
+    top:45%;
+    left:45%;
+    color:blue;
+  }
+
+
+    </style>
+</head>
+<body>
+  <!-- Swiper -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+    <!-- 第一个 -->
+      <div class="swiper-slide">
+        <!-- 导航字体 -->
+        <img src="img/main/index_logo.png">
+        <!-- 人物 -->
+        <img src="img/choice/s_body01.png">
+        <!-- 人物背景 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/choice/s_e01.png" alt="">
+        <!-- 瓶水 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s" src="img/choice/s_water01.png">
+        <!-- 文字 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s" src="img/choice/s_text01.png">
+        <!-- 为爱补水 -->
+        <img class="Img" src="img/choice/s_tab.png">
+        <!-- 预加载 -->
+        <span id="mask">
+          <img id="ig" src="img/load_font.png">
+          <p>0%</p>
+        </span>
+      </div>
+      <!-- 第二个 -->
+      <div class="swiper-slide">
+        <!-- 导航字体 -->
+        <img src="img/main/index_logo.png">
+        <!-- 人物 -->
+        <img src="img/choice/s_body02.png">
+        <!-- 人物背景 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/choice/s_e02.png" alt="">
+        <!-- 瓶水 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s" src="img/choice/s_water02.png">
+        <!-- 文字 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s" src="img/choice/s_text02.png">
+        <!-- 为爱补水 -->
+        <img class="Img" src="img/choice/s_tab.png">
+      </div>
+      <!-- 第三个 -->
+      <div class="swiper-slide">
+        <!-- 导航字体 -->
+        <img src="img/main/index_logo.png">
+        <!-- 人物 -->
+        <img src="img/choice/s_body03.png">
+        <!-- 人物背景 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/choice/s_e03.png" alt="">
+        <!-- 瓶水 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s" src="img/choice/s_water03.png">
+        <!-- 文字 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s" src="img/choice/s_text03.png">
+        <!-- 为爱补水 -->
+        <img class="Img" src="img/choice/s_tab.png">
+      </div>
+      <!-- 第四个 -->
+      <div class="swiper-slide">
+        <!-- 导航字体 -->
+        <img src="img/main/index_logo.png">
+        <!-- 人物 -->
+        <img src="img/choice/s_body04.png">
+        <!-- 人物背景 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/choice/s_e04.png" alt="">
+        <!-- 瓶水 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s" src="img/choice/s_water04.png">
+        <!-- 文字 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s" src="img/choice/s_text04.png">
+        <!-- 为爱补水 -->
+        <img class="Img" src="img/choice/s_tab.png">
+      </div>
+      <!-- 第五个 -->
+      <div class="swiper-slide">
+        <!-- 导航字体 -->
+        <img src="img/main/index_logo.png">
+        <!-- 人物 -->
+        <img src="img/choice/s_body05.png">
+        <!-- 人物背景 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/choice/s_e05.png" alt="">
+        <!-- 瓶水 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s" src="img/choice/s_water05.png">
+        <!-- 文字 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s" src="img/choice/s_text05.png">
+        <!-- 为爱补水 -->
+        <img class="Img" src="img/choice/s_tab.png">
+      </div>
+      <!-- 第六个 -->
+      <div class="swiper-slide">
+        <!-- 导航字体 -->
+        <img src="img/main/index_logo.png">
+        <!-- 人物 -->
+        <img src="img/choice/s_body06.png">
+        <!-- 人物背景 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/choice/s_e06.png" alt="">
+        <!-- 瓶水 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s" src="img/choice/s_water06.png">
+        <!-- 文字 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s" src="img/choice/s_text06.png">
+        <!-- 为爱补水 -->
+        <img class="Img" src="img/choice/s_tab.png">
+      </div>
+      <!-- 第七个 -->
+      <div class="swiper-slide">
+        <!-- 导航字体 -->
+        <img src="img/main/index_logo.png">
+        <!-- 人物 -->
+        <img src="img/choice/s_body07.png">
+        <!-- 人物背景 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/choice/s_e07.png" alt="">
+        <!-- 瓶水 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s" src="img/choice/s_water07.png">
+        <!-- 文字 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s" src="img/choice/s_text07.png">
+        <!-- 为爱补水 -->
+        <img class="Img" src="img/choice/s_tab.png">
+      </div>
+      <!-- 第八个 -->
+      <div class="swiper-slide">
+        <!-- 导航字体 -->
+        <img src="img/main/index_logo.png">
+        <!-- 人物 -->
+        <img src="img/choice/s_body08.png">
+        <!-- 人物背景 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/choice/s_e08.png" alt="">
+        <!-- 瓶水 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s" src="img/choice/s_water08.png">
+        <!-- 文字 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s" src="img/choice/s_text08.png">
+        <!-- 为爱补水 -->
+        <img class="Img" src="img/choice/s_tab.png">
+      </div>
+      <!-- 第九个 -->
+      <div class="swiper-slide">
+        <!-- 导航字体 -->
+        <img src="img/main/index_logo.png">
+        <!-- 人物 -->
+        <img src="img/choice/s_body09.png">
+        <!-- 人物背景 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/choice/s_e09.png" alt="">
+        <!-- 瓶水 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s" src="img/choice/s_water09.png">
+        <!-- 文字 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s" src="img/choice/s_text09.png">
+        <!-- 为爱补水 -->
+        <img class="Img" src="img/choice/s_tab.png">
+      </div>
+      <!-- 第十个 -->
+      <div class="swiper-slide">
+        <!-- 导航字体 -->
+        <img src="img/main/index_logo.png">
+        <!-- 人物 -->
+        <img src="img/choice/s_body10.png">
+        <!-- 人物背景 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/choice/s_e10.png" alt="">
+        <!-- 瓶水 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s" src="img/choice/s_water10.png">
+        <!-- 文字 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s" src="img/choice/s_text10.png">
+        <!-- 为爱补水 -->
+        <img class="Img" src="img/choice/s_tab.png">
+      </div>
+      <!-- 第十一个 -->
+      <div class="swiper-slide">
+        <!-- 导航字体 -->
+        <img src="img/main/index_logo.png">
+        <!-- 人物 -->
+        <img src="img/choice/s_body11.png">
+        <!-- 人物背景 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/choice/s_e11.png" alt="">
+        <!-- 瓶水 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s" src="img/choice/s_water11.png">
+        <!-- 文字 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s" src="img/choice/s_text11.png">
+        <!-- 为爱补水 -->
+        <img class="Img" src="img/choice/s_tab.png">
+      </div>
+      <!-- 第十二个 -->
+      <div class="swiper-slide">
+        <!-- 导航字体 -->
+        <img src="img/main/index_logo.png">
+        <!-- 人物 -->
+        <img src="img/choice/s_body12.png">
+        <!-- 人物背景 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/choice/s_e12.png" alt="">
+        <!-- 瓶水 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s" src="img/choice/s_water12.png">
+        <!-- 文字 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s" src="img/choice/s_text12.png">
+        <!-- 为爱补水 -->
+        <img class="Img" src="img/choice/s_tab.png">
+      </div>
+      <!-- 第十三个 -->
+      <div class="swiper-slide">
+        <!-- 导航字体 -->
+        <img src="img/main/index_logo.png">
+        <!-- 人物 -->
+        <img src="img/choice/s_body13.png">
+        <!-- 人物背景 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/choice/s_e13.png" alt="">
+        <!-- 瓶水 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s" src="img/choice/s_water13.png">
+        <!-- 文字 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s" src="img/choice/s_text13.png">
+        <!-- 为爱补水 -->
+        <img class="Img" src="img/choice/s_tab.png">
+      </div>
+      <!-- 第十四个 -->
+      <div class="swiper-slide">
+        <!-- 导航字体 -->
+        <img src="img/main/index_logo.png">
+        <!-- 人物 -->
+        <img src="img/choice/s_body14.png">
+        <!-- 人物背景 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="img/choice/s_e14.png" alt="">
+        <!-- 瓶水 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="1s" src="img/choice/s_water14.png">
+        <!-- 文字 -->
+        <img class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.8s" src="img/choice/s_text14.png">
+        <!-- 为爱补水 -->
+        <img class="Img" src="img/choice/s_tab.png">
+      </div>
+    </div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script type="text/javascript" src="js/swiper.animate1.0.2.min.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <!-- Initialize Swiper -->
+  <script>
+    var index=0;//记录上一次选择的人物
+    var arr=["img/main/index_logo.png","img/choice/s_body01.png","img/choice/s_e01.png","img/choice/s_water01.png","img/choice/s_text01.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body02.png","img/choice/s_e02.png","img/choice/s_water02.png","img/choice/s_text02.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body03.png","img/choice/s_e03.png","img/choice/s_water03.png","img/choice/s_text03.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body04.png","img/choice/s_e04.png","img/choice/s_water04.png","img/choice/s_text04.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body05.png","img/choice/s_e05.png","img/choice/s_water05.png","img/choice/s_text05.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body06.png","img/choice/s_e06.png","img/choice/s_water06.png","img/choice/s_text06.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body07.png","img/choice/s_e07.png","img/choice/s_water07.png","img/choice/s_text07.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body08.png","img/choice/s_e08.png","img/choice/s_water08.png","img/choice/s_text08.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body09.png","img/choice/s_e09.png","img/choice/s_water09.png","img/choice/s_text09.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body10.png","img/choice/s_e10.png","img/choice/s_water10.png","img/choice/s_text10.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body11.png","img/choice/s_e11.png","img/choice/s_water11.png","img/choice/s_text11.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body12.png","img/choice/s_e12.png","img/choice/s_water12.png","img/choice/s_text12.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body13.png","img/choice/s_e13.png","img/choice/s_water13.png","img/choice/s_text13.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body14.png","img/choice/s_e14.png","img/choice/s_water14.png","img/choice/s_text14.png","img/choice/s_tab.png"];
+    var array=[];
+    var mask=document.querySelector("#mask");
+    var loading=document.querySelector("p");
+
+    var Img=document.querySelectorAll(".Img");
+    for(var i=0;i<Img.length;i++){
+      Img[i].index=i;
+      Img[i].onclick=function(){
+        index=this.index;
+        sessionStorage.index=index;
+        window.location.href="aa2.html";
+      }
+    }
+
+    var swiper = new Swiper('.swiper-container', {
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 1,
+        paginationClickable: true,
+        spaceBetween: 30,
+        loop: true,
+        // 动画
+     onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+    swiperAnimateCache(swiper); //隐藏动画元素 
+    swiperAnimate(swiper); //初始化完成开始动画
+  }, 
+  onSlideChangeEnd: function(swiper){ 
+    swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+  } 
+    });
+    // 预加载
+    function lod(arrly,Fn){
+    var n=0;
+    mask.style.display="block";
+    for(var i=0;i<arr.length;i++){
+    var img=new Image();
+    img.onload=function(){
+        n++;
+    array.push(arr[i]);
+    loading.innerHTML=parseInt(n/arr.length*100)+"%";
+    if(n===arrly.length){
+      Fn();
+    }
+        }
+        img.src=arrly[i];
+      }
+    };
+    lod(arr,function(){
+      mask.style.display="none";
+    });
+    
+    </script>
+</body>
+</html>

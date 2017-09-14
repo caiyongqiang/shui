@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>水密码</title>
+	<link rel="stylesheet" href="animate.css">
+	<style type="text/css">
+	*{margin:0;padding:0;}
+	html,body{
+		width: 100%;
+		height: 100%;	
+		}
+	.wrap{
+		width: 100%;
+		height: 100%;
+		max-width: 640px;
+		/* max-height: 1269px; */
+		background-image: url("img/main/bg.jpg");
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		position:relative;
+		margin:auto;
+	}
+	img{
+		position:absolute;
+	}
+	/* 第一部分 */
+	img:nth-child(1){
+		width: 46.4%;
+		top:1%;
+		left:30%;
+	}
+	img:nth-child(2){
+		width: 100%;
+		top:8%;
+		left:0%;
+	}
+	img:nth-child(3){
+		width: 25%;
+		top:16%;
+		left:5%;
+	}
+	img:nth-child(4){
+		width:51.25%;
+		top:16%;
+		left:29%;
+	}
+	/* 第二部分5-9 */
+	img:nth-child(5){
+		width:23.43%;
+		top:48%;
+		left:5%;
+		animation:peope 1.5s both 2s;
+	}
+	img:nth-child(6){
+		width:23.43%;
+		top:50%;
+		left:18%;
+		animation:peope1 1.5s both 1.5s;
+	}
+	@keyframes peope1{
+		from{
+			top:-50%;
+		}
+		to{
+			top:49%;
+		}
+	}
+	img:nth-child(7){
+		width:25.15%;
+		top:47%;
+		left:32%;
+		animation:peope 1.5s both 0.5s;
+	}
+	img:nth-child(8){
+		width:22.43%;
+		height: 26%;
+		top:47%;
+		left:55%;
+		animation:peope 1.5s both 1.5s;
+	}
+	img:nth-child(9){
+		width:23.43%;
+		top:45%;
+		left:75%;
+		animation:peope 1.5s both 2s;
+	}
+	@keyframes peope{
+		from{
+			top:-50%;
+		}
+		to{
+			top:47%;
+		}
+	}
+	/* 第三部分 */
+	img:nth-child(10){
+		width:25.625%;
+		top:76%;
+		left:35%;
+	}
+	img:nth-child(11){
+		width:16.4%;
+		top:83%;
+		left:38%;
+	}
+	/* 规则 */
+	.wrap div{
+		width: 100%;
+		height: 100%;
+		background-image: url("img/main/rulesText.png");
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		z-index: 3;
+		position: absolute;
+		display: none;
+	}
+	a{
+		display: inline-block;
+		width: 10%;
+		height: 6%;
+		/* border: 1px solid red; */
+		position:absolute;
+		top:11.5%;
+		right:8%;
+	}
+	span{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-image: url("img/loading.jpg");
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+	}
+	#ig{
+		width: 50.38%;
+		position: absolute;
+		top:35%;
+		left:27%;
+	}
+	p{
+		position: absolute;
+		font-size: 20px;
+		top:45%;
+		left:45%;
+		color:blue;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<!-- 第一部分行 1-4-->
+		<img src="" alt="">
+		<img class="animated zoomIn 1" src="" style="animation-delay: 2.8s;" alt="">
+		<img class="animated rotateInDownRight 1" style="animation-delay: 3.8s;" src="" alt="">
+		<img class="animated bounceIn 1"  src="" style="animation-delay: 3.8s;" alt="">
+		<!-- 第二部分 5-9-->
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<img src="" alt="">
+		<!-- 第三部分 10-11-->
+		<img id="start" src="" alt="">
+		<img id="rules" src="" alt="">
+		<!-- 规则 -->
+		<div id="div">
+			<a href="###"></a>
+		</div>
+		<span>
+			<img id="ig" src="img/load_font.png">
+			<p>0%</p>
+		</span>
+	</div>
+</body>
+<script type="text/javascript">
+	var start=document.querySelector("#start");
+	var rules=document.querySelector("#rules");
+	var A=document.querySelector("a");
+	var div=document.querySelector(".wrap div");
+	var Img=document.querySelectorAll("img");
+	var mask=document.querySelector("span");
+	var loading=document.querySelector("p");
+	// -----预加载
+	var arr=["img/main/index_logo.png","img/main/in_bg01.png","img/main/in_01.png","img/main/dialogue.png","img/main/people_01.png","img/main/people_02.png","img/main/people_03.png","img/main/people_04.png","img/main/people_05.png","img/main/start.png","img/main/rules.png"];
+	function loadingFn(array,overFn){
+		var n=0;
+		for(var i=0;i<array.length;i++){
+			//创建图片对象
+			var Img=document.querySelectorAll("img");
+			//2.如果图片触发onload事件，那么表示图片加载完成
+			Img[i].onload=function(){
+				n++;
+				loading.innerHTML=parseInt(n/array.length*100)+"%";
+				if(n===array.length){
+					overFn();
+				}
+			}
+			//3.给图片对象一个路径就会自动加载这张图片
+			Img[i].src=array[i];
+		}
+	}
+	loadingFn(arr,function(){
+		mask.style.display="none";
+	})
+
+	// -----------------
+	start.onclick=function(){
+		window.location.href="aa1.html"
+	}
+	rules.onclick=function(){
+		div.style.display="block";
+	}
+	A.onclick=function(){
+		div.style.display="none";
+	}
+</script>
+</html>
