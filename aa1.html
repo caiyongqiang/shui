@@ -356,8 +356,8 @@
   <!-- Initialize Swiper -->
   <script>
     var index=0;//记录上一次选择的人物
-    var arr=["img/main/index_logo.png","img/choice/s_body01.png","img/choice/s_e01.png","img/choice/s_water01.png","img/choice/s_text01.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body02.png","img/choice/s_e02.png","img/choice/s_water02.png","img/choice/s_text02.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body03.png","img/choice/s_e03.png","img/choice/s_water03.png","img/choice/s_text03.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body04.png","img/choice/s_e04.png","img/choice/s_water04.png","img/choice/s_text04.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body05.png","img/choice/s_e05.png","img/choice/s_water05.png","img/choice/s_text05.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body06.png","img/choice/s_e06.png","img/choice/s_water06.png","img/choice/s_text06.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body07.png","img/choice/s_e07.png","img/choice/s_water07.png","img/choice/s_text07.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body08.png","img/choice/s_e08.png","img/choice/s_water08.png","img/choice/s_text08.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body09.png","img/choice/s_e09.png","img/choice/s_water09.png","img/choice/s_text09.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body10.png","img/choice/s_e10.png","img/choice/s_water10.png","img/choice/s_text10.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body11.png","img/choice/s_e11.png","img/choice/s_water11.png","img/choice/s_text11.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body12.png","img/choice/s_e12.png","img/choice/s_water12.png","img/choice/s_text12.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body13.png","img/choice/s_e13.png","img/choice/s_water13.png","img/choice/s_text13.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body14.png","img/choice/s_e14.png","img/choice/s_water14.png","img/choice/s_text14.png","img/choice/s_tab.png"];
-    var array=[];
+//     var arr=["img/main/index_logo.png","img/choice/s_body01.png","img/choice/s_e01.png","img/choice/s_water01.png","img/choice/s_text01.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body02.png","img/choice/s_e02.png","img/choice/s_water02.png","img/choice/s_text02.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body03.png","img/choice/s_e03.png","img/choice/s_water03.png","img/choice/s_text03.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body04.png","img/choice/s_e04.png","img/choice/s_water04.png","img/choice/s_text04.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body05.png","img/choice/s_e05.png","img/choice/s_water05.png","img/choice/s_text05.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body06.png","img/choice/s_e06.png","img/choice/s_water06.png","img/choice/s_text06.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body07.png","img/choice/s_e07.png","img/choice/s_water07.png","img/choice/s_text07.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body08.png","img/choice/s_e08.png","img/choice/s_water08.png","img/choice/s_text08.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body09.png","img/choice/s_e09.png","img/choice/s_water09.png","img/choice/s_text09.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body10.png","img/choice/s_e10.png","img/choice/s_water10.png","img/choice/s_text10.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body11.png","img/choice/s_e11.png","img/choice/s_water11.png","img/choice/s_text11.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body12.png","img/choice/s_e12.png","img/choice/s_water12.png","img/choice/s_text12.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body13.png","img/choice/s_e13.png","img/choice/s_water13.png","img/choice/s_text13.png","img/choice/s_tab.png","img/main/index_logo.png","img/choice/s_body14.png","img/choice/s_e14.png","img/choice/s_water14.png","img/choice/s_text14.png","img/choice/s_tab.png"];
+//     var array=[];
     var mask=document.querySelector("#mask");
     var loading=document.querySelector("p");
 
@@ -388,25 +388,25 @@
   } 
     });
     // 预加载
-    function lod(arrly,Fn){
-    var n=0;
-    mask.style.display="block";
-    for(var i=0;i<arr.length;i++){
-    var img=new Image();
-    img.onload=function(){
-        n++;
-    array.push(arr[i]);
-    loading.innerHTML=parseInt(n/arr.length*100)+"%";
-    if(n===arrly.length){
-      Fn();
-    }
-        }
-        img.src=arrly[i];
-      }
-    };
-    lod(arr,function(){
-      mask.style.display="none";
-    });
+//     function lod(arrly,Fn){
+//     var n=0;
+//     mask.style.display="block";
+//     for(var i=0;i<arr.length;i++){
+//     var img=new Image();
+//     img.onload=function(){
+//         n++;
+//     array.push(arr[i]);
+//     loading.innerHTML=parseInt(n/arr.length*100)+"%";
+//     if(n===arrly.length){
+//       Fn();
+//     }
+//         }
+//         img.src=arrly[i];
+//       }
+//     };
+//     lod(arr,function(){
+//       mask.style.display="none";
+//     });
     
     </script>
 </body>
